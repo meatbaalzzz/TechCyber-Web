@@ -204,7 +204,131 @@ const App = () => {
     );
   };
 
-  // Sección Hero
+  // Noticia Titular Grande
+  const NoticiaTitular = () => (
+    <section className="relative py-16 bg-gradient-to-br from-blue-900/30 via-purple-900/30 to-cyan-900/30 overflow-hidden">
+      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0">
+        <div className="w-full h-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 animate-pulse"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm font-bold rounded-full mb-4 animate-pulse">
+              🔥 NOTICIA EXPLOSIVA
+            </div>
+            <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6 leading-tight">
+              NVIDIA RTX 5090 REVELADA
+            </h2>
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+              La nueva generación de tarjetas gráficas promete un rendimiento 60% superior con arquitectura revolucionaria de IA integrada. ¡Pre-órdenes disponibles YA!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button 
+                onClick={() => setCurrentSection('componentes')}
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/50 transform hover:-translate-y-2 hover:scale-105 text-lg"
+              >
+                🚀 VER RTX 5090
+              </button>
+              <button className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-black font-bold rounded-lg transition-all duration-300 text-lg">
+                📰 Leer Más
+              </button>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-2xl border-2 border-cyan-500/30 hover:border-cyan-500 transition-all duration-500 group">
+              <img 
+                src="https://images.unsplash.com/photo-1696197819149-e7b0654557ba" 
+                alt="RTX 5090" 
+                className="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/60 to-transparent group-hover:from-cyan-900/40"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-bold text-lg">Rendimiento nunca antes visto</p>
+                <p className="text-cyan-400 text-sm">Disponible Q3 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+
+  // Oferta Titular Mega
+  const OfertaTitular = () => (
+    <section className="relative py-20 bg-gradient-to-br from-red-900/40 via-orange-900/40 to-yellow-900/40 overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="w-full h-full bg-gradient-to-r from-red-500/20 to-yellow-500/20 animate-pulse"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <div className="inline-block px-6 py-3 bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold rounded-full mb-6 animate-bounce">
+          ⚡ MEGA OFERTA LIMITADA ⚡
+        </div>
+        
+        <h2 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent mb-6 animate-pulse">
+          SUPER BUNDLE GAMER
+        </h2>
+        
+        <p className="text-2xl text-white mb-8 max-w-4xl mx-auto">
+          RTX 4090 + Ryzen 9 7950X + 64GB DDR5 + Monitor 4K 144Hz
+        </p>
+        
+        <div className="flex items-center justify-center gap-8 mb-8">
+          <div className="text-center">
+            <p className="text-lg text-gray-400 line-through">Precio Normal</p>
+            <p className="text-3xl font-bold text-gray-400 line-through">$4,299.99</p>
+          </div>
+          <div className="text-6xl text-yellow-400 animate-pulse">→</div>
+          <div className="text-center">
+            <p className="text-lg text-yellow-400">PRECIO ESPECIAL</p>
+            <p className="text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              $2,999.99
+            </p>
+          </div>
+        </div>
+        
+        <div className="mb-8">
+          <p className="text-red-400 text-xl font-bold animate-pulse mb-4">
+            ¡AHORRAS $1,300! Solo quedan 24 horas
+          </p>
+          <div className="flex justify-center">
+            <div className="grid grid-cols-4 gap-4 text-center">
+              <div className="bg-black/50 rounded-lg p-3">
+                <div className="text-2xl font-bold text-yellow-400">23</div>
+                <div className="text-xs text-gray-400">HORAS</div>
+              </div>
+              <div className="bg-black/50 rounded-lg p-3">
+                <div className="text-2xl font-bold text-yellow-400">45</div>
+                <div className="text-xs text-gray-400">MIN</div>
+              </div>
+              <div className="bg-black/50 rounded-lg p-3">
+                <div className="text-2xl font-bold text-yellow-400">32</div>
+                <div className="text-xs text-gray-400">SEG</div>
+              </div>
+              <div className="bg-black/50 rounded-lg p-3">
+                <div className="text-2xl font-bold text-red-400">!</div>
+                <div className="text-xs text-gray-400">URGENTE</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <button
+          onClick={() => agregarAlCarrito({id: 9999, nombre: 'Super Bundle Gamer', precio: 2999.99})}
+          className="px-12 py-6 text-2xl bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 hover:from-yellow-600 hover:via-orange-600 hover:to-red-600 text-black font-bold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/50 transform hover:-translate-y-3 hover:scale-110 relative overflow-hidden group"
+        >
+          <span className="relative z-10">🔥 COMPRAR BUNDLE MEGA 🔥</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </button>
+        
+        <p className="text-sm text-gray-400 mt-4">
+          Envío gratis • Garantía extendida • Setup profesional incluido
+        </p>
+      </div>
+    </section>
+  );
   const HeroSection = () => (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-green-900/20">
       <div className="absolute inset-0 opacity-10 animate-pulse">
