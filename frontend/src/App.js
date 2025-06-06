@@ -724,6 +724,8 @@ const App = () => {
         return (
           <>
             <HeroSection />
+            <NoticiaTitular />
+            <OfertaTitular />
             <ComponentesSection />
             <VideojuegosSection />
           </>
@@ -733,11 +735,21 @@ const App = () => {
       case 'videojuegos':
         return <VideojuegosSection />;
       case 'ofertas':
-        return <OfertasSection />;
+        return (
+          <>
+            <OfertaTitular />
+            <OfertasSection />
+          </>
+        );
       case 'qa':
         return <QASection />;
       case 'noticias':
-        return <NoticiasSection />;
+        return (
+          <>
+            <NoticiaTitular />
+            <NoticiasSection />
+          </>
+        );
       default:
         return searchTerm ? <BusquedaSection /> : <HeroSection />;
     }
