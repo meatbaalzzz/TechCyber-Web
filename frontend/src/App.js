@@ -549,43 +549,141 @@ const App = () => {
     </section>
   );
 
-  // Sección de noticias gaming
+  // Sección de noticias gaming expandida
   const NoticiasSection = () => (
     <section className="py-16 bg-gradient-to-br from-purple-900/20 to-black">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-          Noticias Gaming
+          Noticias Gaming & Tech
         </h2>
+        
+        {/* Noticias principales */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <div className="bg-gradient-to-br from-red-900/50 to-black border border-red-500/30 rounded-xl overflow-hidden hover:border-red-500 transition-all duration-300 hover:scale-105 group">
+            <div className="relative">
+              <img src="https://images.unsplash.com/photo-1696197819149-e7b0654557ba" alt="RTX 5090" className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                🔥 EXCLUSIVA
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+            </div>
+            <div className="p-6">
+              <div className="text-sm text-red-400 mb-2">15 Jun 2025 • Hardware</div>
+              <h3 className="text-2xl font-bold text-white mb-3">RTX 5090: Primera Review Exclusiva</h3>
+              <p className="text-gray-400 mb-4">NVIDIA presenta oficialmente la RTX 5090 con arquitectura Ada Lovelace Next-Gen. Un 65% más de rendimiento que la RTX 4090 con Ray Tracing de nueva generación...</p>
+              <button className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-bold rounded transition-all duration-300">
+                Leer Artículo Completo
+              </button>
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-br from-blue-900/50 to-black border border-blue-500/30 rounded-xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:scale-105 group">
+            <div className="relative">
+              <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg" alt="GTA 6" className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                🎮 GAMING
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+            </div>
+            <div className="p-6">
+              <div className="text-sm text-blue-400 mb-2">12 Jun 2025 • Videojuegos</div>
+              <h3 className="text-2xl font-bold text-white mb-3">GTA 6: Primer Gameplay Oficial</h3>
+              <p className="text-gray-400 mb-4">Rockstar Games revela por primera vez el gameplay de Grand Theft Auto VI. Vice City renace con gráficos fotorealistas y mecánicas revolucionarias...</p>
+              <button className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded transition-all duration-300">
+                Ver Trailer Gameplay
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Grid de noticias secundarias */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
-              titulo: "RTX 5090 Anunciada",
-              fecha: "15 Jun 2025",
-              resumen: "NVIDIA presenta su nueva serie RTX 5000 con arquitectura revolucionaria...",
-              imagen: "https://images.unsplash.com/photo-1696197819149-e7b0654557ba"
-            },
-            {
-              titulo: "GTA 6 Gameplay Revelado",
-              fecha: "12 Jun 2025",
-              resumen: "Rockstar Games muestra el primer gameplay oficial de Grand Theft Auto VI...",
-              imagen: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg"
-            },
-            {
-              titulo: "AMD Ryzen 8000 Series",
+              titulo: "AMD Ryzen 8000 Series Oficial",
               fecha: "10 Jun 2025",
-              resumen: "Los nuevos procesadores AMD prometen un 30% más de rendimiento...",
-              imagen: "https://images.unsplash.com/photo-1568209865332-a15790aed756"
+              categoria: "Hardware",
+              resumen: "Los nuevos procesadores AMD Zen 5 prometen un 35% más de rendimiento por vatio con arquitectura híbrida revolucionaria...",
+              imagen: "https://images.unsplash.com/photo-1568209865332-a15790aed756",
+              color: "green"
+            },
+            {
+              titulo: "PlayStation 6 Dev Kit Filtrado",
+              fecha: "8 Jun 2025",
+              categoria: "Consolas",
+              resumen: "Imágenes del kit de desarrollo de PS6 revelan soporte para 8K 120fps y ray tracing hardware de próxima generación...",
+              imagen: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5",
+              color: "purple"
+            },
+            {
+              titulo: "Steam Deck 2 Confirmado",
+              fecha: "6 Jun 2025",
+              categoria: "Portátiles",
+              resumen: "Valve confirma oficialmente Steam Deck 2 con chip custom AMD RDNA 4 y pantalla OLED de 120Hz para Q1 2026...",
+              imagen: "https://images.pexels.com/photos/7862493/pexels-photo-7862493.jpeg",
+              color: "cyan"
+            },
+            {
+              titulo: "Microsoft DirectX 13 Revelado",
+              fecha: "4 Jun 2025",
+              categoria: "Software",
+              resumen: "DirectX 13 introduce ray tracing global illumination en tiempo real y soporte nativo para IA generativa en juegos...",
+              imagen: "https://images.pexels.com/photos/163100/circuit-circuit-board-resistor-computer-163100.jpeg",
+              color: "yellow"
+            },
+            {
+              titulo: "Meta Quest 4 Especificaciones",
+              fecha: "2 Jun 2025",
+              categoria: "VR/AR",
+              resumen: "El nuevo headset de Meta incluirá eye tracking avanzado, resolución 4K por ojo y conectividad 5G integrada...",
+              imagen: "https://images.pexels.com/photos/7887043/pexels-photo-7887043.jpeg",
+              color: "pink"
+            },
+            {
+              titulo: "Intel Arc B-Series GPUs",
+              fecha: "1 Jun 2025",
+              categoria: "Graphics",
+              resumen: "Intel Arc Battlemage promete competir directamente con RTX 4070 a precio más accesible con XeSS 2.0...",
+              imagen: "https://images.unsplash.com/photo-1696197820893-e285fdddf60b",
+              color: "orange"
             }
           ].map((noticia, index) => (
-            <div key={index} className="bg-gradient-to-br from-gray-900 to-black border border-purple-500/30 rounded-xl overflow-hidden hover:border-purple-500 transition-all duration-300 hover:scale-105">
-              <img src={noticia.imagen} alt={noticia.titulo} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <div className="text-sm text-purple-400 mb-2">{noticia.fecha}</div>
-                <h3 className="text-xl font-bold text-white mb-2">{noticia.titulo}</h3>
-                <p className="text-gray-400">{noticia.resumen}</p>
+            <div key={index} className={`bg-gradient-to-br from-${noticia.color}-900/50 to-black border border-${noticia.color}-500/30 rounded-xl overflow-hidden hover:border-${noticia.color}-500 transition-all duration-300 hover:scale-105 group`}>
+              <div className="relative">
+                <img src={noticia.imagen} alt={noticia.titulo} className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className={`absolute top-3 left-3 bg-${noticia.color}-500 text-white px-2 py-1 rounded-full text-xs font-bold`}>
+                  {noticia.categoria}
+                </div>
+              </div>
+              <div className="p-4">
+                <div className={`text-sm text-${noticia.color}-400 mb-2`}>{noticia.fecha}</div>
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-green-400 transition-colors">{noticia.titulo}</h3>
+                <p className="text-gray-400 text-sm mb-3 line-clamp-3">{noticia.resumen}</p>
+                <button className={`text-sm bg-${noticia.color}-500 hover:bg-${noticia.color}-600 text-white px-3 py-1 rounded font-bold transition-all duration-300`}>
+                  Leer Más
+                </button>
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* Newsletter signup */}
+        <div className="mt-16 text-center bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-2xl p-8 border border-purple-500/30">
+          <h3 className="text-2xl font-bold text-white mb-4">🚀 Mantente Al Día</h3>
+          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            Suscríbete a nuestro newsletter y recibe las últimas noticias de tecnología, lanzamientos exclusivos y ofertas especiales directamente en tu inbox.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input 
+              type="email" 
+              placeholder="tu-email@ejemplo.com" 
+              className="flex-1 px-4 py-3 bg-black/50 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none"
+            />
+            <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/50">
+              Suscribirse
+            </button>
+          </div>
         </div>
       </div>
     </section>
