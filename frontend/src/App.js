@@ -143,7 +143,11 @@ const App = () => {
   // Sección Hero
   const HeroSection = () => (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-green-900/20">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2300ff88" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] animate-pulse"></div>
+      <div className="absolute inset-0 opacity-10 animate-pulse">
+        <div className="w-full h-full bg-gradient-to-r from-green-500/10 to-emerald-500/10 bg-repeat" 
+             style={{backgroundImage: "radial-gradient(circle at 25% 25%, #22c55e 2px, transparent 2px), radial-gradient(circle at 75% 75%, #10b981 2px, transparent 2px)", backgroundSize: "60px 60px"}}>
+        </div>
+      </div>
       
       <div className="relative z-10 text-center px-4">
         <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-green-400 via-green-500 to-emerald-600 bg-clip-text text-transparent animate-pulse">
