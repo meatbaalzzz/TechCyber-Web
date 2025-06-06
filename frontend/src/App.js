@@ -648,19 +648,19 @@ const App = () => {
               color: "orange"
             }
           ].map((noticia, index) => (
-            <div key={index} className={`bg-gradient-to-br from-${noticia.color}-900/50 to-black border border-${noticia.color}-500/30 rounded-xl overflow-hidden hover:border-${noticia.color}-500 transition-all duration-300 hover:scale-105 group`}>
+            <div key={index} className="bg-gradient-to-br from-gray-900/50 to-black border border-green-500/30 rounded-xl overflow-hidden hover:border-green-500 transition-all duration-300 hover:scale-105 group">
               <div className="relative">
                 <img src={noticia.imagen} alt={noticia.titulo} className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div className={`absolute top-3 left-3 bg-${noticia.color}-500 text-white px-2 py-1 rounded-full text-xs font-bold`}>
+                <div className="absolute top-3 left-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">
                   {noticia.categoria}
                 </div>
               </div>
               <div className="p-4">
-                <div className={`text-sm text-${noticia.color}-400 mb-2`}>{noticia.fecha}</div>
+                <div className="text-sm text-green-400 mb-2">{noticia.fecha}</div>
                 <h3 className="text-lg font-bold text-white mb-2 group-hover:text-green-400 transition-colors">{noticia.titulo}</h3>
                 <p className="text-gray-400 text-sm mb-3 line-clamp-3">{noticia.resumen}</p>
-                <button className={`text-sm bg-${noticia.color}-500 hover:bg-${noticia.color}-600 text-white px-3 py-1 rounded font-bold transition-all duration-300`}>
+                <button className="text-sm bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded font-bold transition-all duration-300">
                   Leer Más
                 </button>
               </div>
