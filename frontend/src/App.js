@@ -21,18 +21,23 @@ const App = () => {
     { id: 10, nombre: 'AMD RX 7900 XTX', categoria: 'Tarjetas Gráficas', precio: 999.99, imagen: 'https://images.unsplash.com/photo-1658673847785-08f1738116f8', descripcion: 'Tarjeta gráfica AMD de alta gama', especificaciones: '24GB GDDR6, RDNA 3' },
   ];
 
-  // Datos de productos - Videojuegos
+  // Datos de productos - Videojuegos con imágenes reales
   const videojuegos = [
-    { id: 101, nombre: 'Cyberpunk 2077: Phantom Liberty', categoria: 'Acción RPG', precio: 59.99, imagen: 'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg', descripcion: 'Expansión futurista de mundo abierto', plataforma: 'PC, PlayStation, Xbox' },
-    { id: 102, nombre: 'Elden Ring', categoria: 'Acción RPG', precio: 49.99, imagen: 'https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg', descripcion: 'Épica aventura de FromSoftware', plataforma: 'PC, PlayStation, Xbox' },
-    { id: 103, nombre: 'Call of Duty: Modern Warfare III', categoria: 'FPS', precio: 69.99, imagen: 'https://images.pexels.com/photos/5698416/pexels-photo-5698416.jpeg', descripcion: 'Shooter multijugador de acción', plataforma: 'PC, PlayStation, Xbox' },
-    { id: 104, nombre: 'The Legend of Zelda: Tears of the Kingdom', categoria: 'Aventura', precio: 59.99, imagen: 'https://images.pexels.com/photos/32327414/pexels-photo-32327414.jpeg', descripcion: 'Aventura épica en Hyrule', plataforma: 'Nintendo Switch' },
-    { id: 105, nombre: 'FIFA 24', categoria: 'Deportes', precio: 59.99, imagen: 'https://images.unsplash.com/photo-1493711662062-fa541adb3fc8', descripcion: 'El mejor simulador de fútbol', plataforma: 'PC, PlayStation, Xbox' },
-    { id: 106, nombre: 'Spider-Man 2', categoria: 'Acción', precio: 69.99, imagen: 'https://images.pexels.com/photos/5698363/pexels-photo-5698363.jpeg', descripcion: 'Aventuras del hombre araña', plataforma: 'PlayStation 5' },
-    { id: 107, nombre: "Baldur's Gate 3", categoria: 'RPG', precio: 59.99, imagen: 'https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2', descripcion: 'RPG de fantasía épica', plataforma: 'PC, PlayStation' },
-    { id: 108, nombre: 'Starfield', categoria: 'Acción RPG', precio: 69.99, imagen: 'https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b', descripcion: 'Exploración espacial épica', plataforma: 'PC, Xbox' },
-    { id: 109, nombre: 'Mortal Kombat 1', categoria: 'Lucha', precio: 59.99, imagen: 'https://images.pexels.com/photos/4148898/pexels-photo-4148898.jpeg', descripcion: 'Combates brutales y fatalities', plataforma: 'PC, PlayStation, Xbox' },
-    { id: 110, nombre: 'Alan Wake 2', categoria: 'Terror', precio: 49.99, imagen: 'https://images.unsplash.com/photo-1614179924047-e1ab49a0a0cf', descripcion: 'Terror psicológico sobrenatural', plataforma: 'PC, PlayStation, Xbox' },
+    { id: 101, nombre: 'Cyberpunk 2077: Phantom Liberty', categoria: 'Acción RPG', precio: 59.99, imagen: 'https://images.pexels.com/photos/7887043/pexels-photo-7887043.jpeg', descripcion: 'Expansión futurista cyberpunk con Ray Tracing', plataforma: 'PC, PlayStation, Xbox', descuento: 20 },
+    { id: 102, nombre: 'Elden Ring', categoria: 'Acción RPG', precio: 49.99, imagen: 'https://images.pexels.com/photos/7778824/pexels-photo-7778824.jpeg', descripcion: 'Épica aventura de FromSoftware - GOTY 2022', plataforma: 'PC, PlayStation, Xbox', descuento: 25 },
+    { id: 103, nombre: 'Call of Duty: Modern Warfare III', categoria: 'FPS', precio: 69.99, imagen: 'https://images.unsplash.com/photo-1534423861386-85a16f5d13fd', descripcion: 'El FPS más épico del año - Multijugador online', plataforma: 'PC, PlayStation, Xbox', bestseller: true },
+    { id: 104, nombre: 'The Legend of Zelda: Tears of the Kingdom', categoria: 'Aventura', precio: 59.99, imagen: 'https://images.unsplash.com/photo-1635514569146-9a9607ecf303', descripcion: 'Aventura épica en Hyrule - Exclusivo Nintendo', plataforma: 'Nintendo Switch', exclusivo: true },
+    { id: 105, nombre: 'FIFA 24', categoria: 'Deportes', precio: 59.99, imagen: 'https://images.unsplash.com/photo-1640955011254-39734e60b16f', descripcion: 'El simulador de fútbol más realista', plataforma: 'PC, PlayStation, Xbox', descuento: 15 },
+    { id: 106, nombre: 'Spider-Man 2', categoria: 'Acción', precio: 69.99, imagen: 'https://images.pexels.com/photos/7773547/pexels-photo-7773547.jpeg', descripcion: 'Aventuras épicas del Hombre Araña en 4K', plataforma: 'PlayStation 5', exclusivo: true },
+    { id: 107, nombre: "Baldur's Gate 3", categoria: 'RPG', precio: 59.99, imagen: 'https://images.pexels.com/photos/4048096/pexels-photo-4048096.jpeg', descripcion: 'RPG de fantasía épica - Más de 100 horas', plataforma: 'PC, PlayStation', bestseller: true },
+    { id: 108, nombre: 'Starfield', categoria: 'Acción RPG', precio: 69.99, imagen: 'https://images.pexels.com/photos/7862493/pexels-photo-7862493.jpeg', descripcion: 'Exploración espacial épica de Bethesda', plataforma: 'PC, Xbox', descuento: 30 },
+    { id: 109, nombre: 'Mortal Kombat 1', categoria: 'Lucha', precio: 59.99, imagen: 'https://images.pexels.com/photos/31113427/pexels-photo-31113427.jpeg', descripcion: 'Combates brutales y fatalities épicos', plataforma: 'PC, PlayStation, Xbox' },
+    { id: 110, nombre: 'Alan Wake 2', categoria: 'Terror', precio: 49.99, imagen: 'https://images.unsplash.com/photo-1660079542792-a93da7ab1206', descripcion: 'Terror psicológico sobrenatural premiado', plataforma: 'PC, PlayStation, Xbox', descuento: 35 },
+    { id: 111, nombre: 'The Last of Us Part II', categoria: 'Acción/Aventura', precio: 39.99, imagen: 'https://images.unsplash.com/photo-1660079542792-a93da7ab1206', descripcion: 'Historia post-apocalíptica emocional', plataforma: 'PlayStation', bestseller: true },
+    { id: 112, nombre: 'Grand Theft Auto VI', categoria: 'Acción', precio: 79.99, imagen: 'https://images.pexels.com/photos/1373100/pexels-photo-1373100.jpeg', descripcion: 'El juego más esperado de la década', plataforma: 'PC, PlayStation, Xbox', preventa: true },
+    { id: 113, nombre: 'Pac-Man World Re-PAC', categoria: 'Plataformas', precio: 29.99, imagen: 'https://images.pexels.com/photos/1373100/pexels-photo-1373100.jpeg', descripcion: 'Clásico remasterizado con gráficos modernos', plataforma: 'Todas las plataformas', retro: true },
+    { id: 114, nombre: 'God of War Ragnarök', categoria: 'Acción/Aventura', precio: 59.99, imagen: 'https://images.pexels.com/photos/16247234/pexels-photo-16247234.jpeg', descripcion: 'Épica nórdica de Kratos y Atreus', plataforma: 'PlayStation, PC', bestseller: true },
+    { id: 115, nombre: 'Minecraft Legends', categoria: 'Estrategia', precio: 39.99, imagen: 'https://images.unsplash.com/photo-1511512578047-dfb367046420', descripcion: 'Estrategia en el universo Minecraft', plataforma: 'Todas las plataformas' },
   ];
 
   // Combinar todos los productos para búsqueda
