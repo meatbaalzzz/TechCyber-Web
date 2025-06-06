@@ -107,43 +107,102 @@ const App = () => {
     </nav>
   );
 
-  // Tarjeta de producto con efectos 3D
-  const ProductCard = ({ producto, tipo }) => (
-    <div className="group relative bg-gradient-to-br from-gray-900 to-black border border-green-500/30 rounded-xl overflow-hidden hover:border-green-500 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20 transform-gpu">
-      <div className="relative overflow-hidden">
-        <img
-          src={producto.imagen}
-          alt={producto.nombre}
-          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent group-hover:from-green-900/40"></div>
-        <div className="absolute top-2 right-2">
-          <span className="px-2 py-1 bg-green-500 text-black text-xs rounded-full font-bold">
-            ${producto.precio}
-          </span>
+  // Tarjeta de producto con efectos 3D y diseño marketero
+  const ProductCard = ({ producto, tipo }) => {
+    const precioOriginal = tipo === 'juego' && producto.descuento ? 
+      (producto.precio / (1 - producto.descuento / 100)).toFixed(2) : null;
+    
+    return (
+      <div className="group relative bg-gradient-to-br from-gray-900 to-black border border-green-500/30 rounded-xl overflow-hidden hover:border-green-500 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20 transform-gpu">
+        {/* Badges */}
+        <div className="absolute top-2 left-2 z-20 flex flex-col gap-1">
+          {producto.bestseller && (
+            <span className="px-2 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs rounded-full font-bold animate-pulse">
+              🔥 BESTSELLER
+            </span>
+          )}
+          {producto.exclusivo && (
+            <span className="px-2 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs rounded-full font-bold">
+              ⭐ EXCLUSIVO
+            </span>
+          )}
+          {producto.preventa && (
+            <span className="px-2 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs rounded-full font-bold">
+              🚀 PRE-VENTA
+            </span>
+          )}
+          {producto.retro && (
+            <span className="px-2 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-black text-xs rounded-full font-bold">
+              👾 RETRO
+            </span>
+          )}
+        </div>
+        
+        <div className="relative overflow-hidden">
+          <img
+            src={producto.imagen}
+            alt={producto.nombre}
+            className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent group-hover:from-green-900/40"></div>
+          
+          {/* Precio con descuento */}
+          <div className="absolute top-2 right-2">
+            {producto.descuento ? (
+              <div className="text-right">
+                <div className="px-2 py-1 bg-red-500 text-white text-xs rounded-full font-bold mb-1">
+                  -{producto.descuento}%
+                </div>
+                <div className="px-2 py-1 bg-green-500 text-black text-xs rounded-full font-bold">
+                  ${producto.precio}
+                </div>
+                {precioOriginal && (
+                  <div className="text-xs text-gray-400 line-through mt-1">
+                    ${precioOriginal}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <span className="px-2 py-1 bg-green-500 text-black text-xs rounded-full font-bold">
+                ${producto.precio}
+              </span>
+            )}
+          </div>
+        </div>
+        
+        <div className="p-4">
+          <h3 className="text-lg font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
+            {producto.nombre}
+          </h3>
+          <p className="text-sm text-gray-400 mb-2">{producto.categoria}</p>
+          <p className="text-sm text-gray-300 mb-3 line-clamp-2">{producto.descripcion}</p>
+          {tipo === 'componente' && (
+            <p className="text-xs text-green-400 mb-3">{producto.especificaciones}</p>
+          )}
+          {tipo === 'juego' && (
+            <p className="text-xs text-blue-400 mb-3">{producto.plataforma}</p>
+          )}
+          
+          {/* Botón CTA más grande y atractivo */}
+          <button
+            onClick={() => agregarAlCarrito(producto)}
+            className="w-full py-3 text-lg bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-black font-bold rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-green-500/50 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden group/btn"
+          >
+            <span className="relative z-10">
+              {producto.preventa ? '🚀 PRE-ORDENAR' : '🛒 COMPRAR AHORA'}
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300"></div>
+          </button>
+          
+          {producto.descuento && (
+            <p className="text-center text-red-400 text-sm mt-2 font-bold animate-pulse">
+              ¡Ahorra ${((precioOriginal - producto.precio)).toFixed(2)}!
+            </p>
+          )}
         </div>
       </div>
-      <div className="p-4">
-        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
-          {producto.nombre}
-        </h3>
-        <p className="text-sm text-gray-400 mb-2">{producto.categoria}</p>
-        <p className="text-sm text-gray-300 mb-3 line-clamp-2">{producto.descripcion}</p>
-        {tipo === 'componente' && (
-          <p className="text-xs text-green-400 mb-3">{producto.especificaciones}</p>
-        )}
-        {tipo === 'juego' && (
-          <p className="text-xs text-blue-400 mb-3">{producto.plataforma}</p>
-        )}
-        <button
-          onClick={() => agregarAlCarrito(producto)}
-          className="w-full py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-black font-bold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-green-500/50 transform hover:-translate-y-1"
-        >
-          Agregar al Carrito
-        </button>
-      </div>
-    </div>
-  );
+    );
+  };
 
   // Sección Hero
   const HeroSection = () => (
