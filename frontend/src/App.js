@@ -23,7 +23,7 @@ const App = () => {
 
   // Datos de productos - Videojuegos con imágenes reales
   const videojuegos = [
-    { id: 101, nombre: 'Cyberpunk 2077: Phantom Liberty', categoria: 'Acción RPG', precio: 59.99, imagen: 'https://images.pexels.com/photos/7887043/pexels-photo-7887043.jpeg', descripcion: 'Expansión futurista cyberpunk con Ray Tracing', plataforma: 'PC, PlayStation, Xbox', descuento: 20 },
+    { id: 101, nombre: 'Cyberpunk 2077: Phantom Liberty', categoria: 'Acción RPG', precio: 59.99, imagen: 'https://images.https://cdn.mos.cms.futurecdn.net/BeyhFdCM2ugLQjX8vX7fuQ.jpg.com/photos/7887043/pexels-photo-7887043.jpeg', descripcion: 'Expansión futurista cyberpunk con Ray Tracing', plataforma: 'PC, PlayStation, Xbox', descuento: 20 },
     { id: 102, nombre: 'Elden Ring', categoria: 'Acción RPG', precio: 49.99, imagen: 'https://images.pexels.com/photos/7778824/pexels-photo-7778824.jpeg', descripcion: 'Épica aventura de FromSoftware - GOTY 2022', plataforma: 'PC, PlayStation, Xbox', descuento: 25 },
     { id: 103, nombre: 'Call of Duty: Modern Warfare III', categoria: 'FPS', precio: 69.99, imagen: 'https://images.unsplash.com/photo-1534423861386-85a16f5d13fd', descripcion: 'El FPS más épico del año - Multijugador online', plataforma: 'PC, PlayStation, Xbox', bestseller: true },
     { id: 104, nombre: 'The Legend of Zelda: Tears of the Kingdom', categoria: 'Aventura', precio: 59.99, imagen: 'https://images.unsplash.com/photo-1635514569146-9a9607ecf303', descripcion: 'Aventura épica en Hyrule - Exclusivo Nintendo', plataforma: 'Nintendo Switch', exclusivo: true },
