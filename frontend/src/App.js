@@ -400,37 +400,113 @@ const App = () => {
     </section>
   );
 
-  // Sección de ofertas especiales
+  // Sección de ofertas especiales expandida
   const OfertasSection = () => (
     <section className="py-16 bg-gradient-to-br from-red-900/20 to-black">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-red-400 to-orange-600 bg-clip-text text-transparent">
           Ofertas Especiales 🔥
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-gradient-to-br from-red-900/50 to-black border border-red-500/30 rounded-xl p-6 hover:border-red-500 transition-all duration-300 hover:scale-105">
-            <h3 className="text-2xl font-bold text-red-400 mb-4">Bundle Gaming</h3>
-            <p className="text-gray-300 mb-4">RTX 4090 + Ryzen 9 7950X</p>
-            <div className="flex items-center justify-between">
+        
+        {/* Ofertas principales */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="bg-gradient-to-br from-red-900/50 to-black border border-red-500/30 rounded-xl p-6 hover:border-red-500 transition-all duration-300 hover:scale-105 relative overflow-hidden group">
+            <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">
+              HOT 🔥
+            </div>
+            <h3 className="text-2xl font-bold text-red-400 mb-4">Bundle Gaming Pro</h3>
+            <p className="text-gray-300 mb-4">RTX 4090 + Ryzen 9 7950X + 32GB DDR5</p>
+            <div className="flex items-center justify-between mb-4">
               <span className="text-lg line-through text-gray-500">$2,699.98</span>
-              <span className="text-2xl font-bold text-red-400">$2,399.99</span>
+              <span className="text-3xl font-bold text-red-400">$2,199.99</span>
             </div>
+            <button className="w-full py-3 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-bold rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-red-500/50 transform hover:-translate-y-1">
+              🚀 COMPRAR BUNDLE
+            </button>
+            <p className="text-center text-red-400 text-sm mt-2 font-bold">¡Ahorra $500!</p>
           </div>
+          
           <div className="bg-gradient-to-br from-green-900/50 to-black border border-green-500/30 rounded-xl p-6 hover:border-green-500 transition-all duration-300 hover:scale-105">
-            <h3 className="text-2xl font-bold text-green-400 mb-4">Pack Gamer</h3>
-            <p className="text-gray-300 mb-4">3 Juegos AAA</p>
-            <div className="flex items-center justify-between">
-              <span className="text-lg line-through text-gray-500">$179.97</span>
-              <span className="text-2xl font-bold text-green-400">$129.99</span>
+            <div className="absolute top-2 right-2 bg-green-500 text-black px-2 py-1 rounded-full text-xs font-bold">
+              POPULAR ⭐
             </div>
+            <h3 className="text-2xl font-bold text-green-400 mb-4">Pack Gamer Elite</h3>
+            <p className="text-gray-300 mb-4">5 Juegos AAA + DLC Season Pass</p>
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-lg line-through text-gray-500">$349.95</span>
+              <span className="text-3xl font-bold text-green-400">$179.99</span>
+            </div>
+            <button className="w-full py-3 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-green-500/50 transform hover:-translate-y-1">
+              🎮 COMPRAR PACK
+            </button>
+            <p className="text-center text-green-400 text-sm mt-2 font-bold">¡Ahorra $170!</p>
           </div>
+          
           <div className="bg-gradient-to-br from-blue-900/50 to-black border border-blue-500/30 rounded-xl p-6 hover:border-blue-500 transition-all duration-300 hover:scale-105">
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">Setup Completo</h3>
-            <p className="text-gray-300 mb-4">PC + Monitor + Periféricos</p>
-            <div className="flex items-center justify-between">
-              <span className="text-lg line-through text-gray-500">$3,999.99</span>
-              <span className="text-2xl font-bold text-blue-400">$3,499.99</span>
+            <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+              COMPLETO 💎
             </div>
+            <h3 className="text-2xl font-bold text-blue-400 mb-4">Setup Streamer</h3>
+            <p className="text-gray-300 mb-4">PC + Monitor 4K + Cámara + Audio</p>
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-lg line-through text-gray-500">$4,999.99</span>
+              <span className="text-3xl font-bold text-blue-400">$3,799.99</span>
+            </div>
+            <button className="w-full py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/50 transform hover:-translate-y-1">
+              📺 COMPRAR SETUP
+            </button>
+            <p className="text-center text-blue-400 text-sm mt-2 font-bold">¡Ahorra $1,200!</p>
+          </div>
+        </div>
+        
+        {/* Ofertas adicionales */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-gradient-to-br from-purple-900/50 to-black border border-purple-500/30 rounded-xl p-4 hover:border-purple-500 transition-all duration-300 hover:scale-105">
+            <h4 className="text-lg font-bold text-purple-400 mb-2">Bundle AMD</h4>
+            <p className="text-sm text-gray-300 mb-3">RX 7900XTX + Ryzen 7</p>
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-sm line-through text-gray-500">$1,299</span>
+              <span className="text-xl font-bold text-purple-400">$999</span>
+            </div>
+            <button className="w-full py-2 bg-purple-500 hover:bg-purple-600 text-white font-bold rounded text-sm transition-all duration-300">
+              COMPRAR
+            </button>
+          </div>
+          
+          <div className="bg-gradient-to-br from-yellow-900/50 to-black border border-yellow-500/30 rounded-xl p-4 hover:border-yellow-500 transition-all duration-300 hover:scale-105">
+            <h4 className="text-lg font-bold text-yellow-400 mb-2">Retro Pack</h4>
+            <p className="text-sm text-gray-300 mb-3">10 Clásicos + Emulador</p>
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-sm line-through text-gray-500">$199</span>
+              <span className="text-xl font-bold text-yellow-400">$89</span>
+            </div>
+            <button className="w-full py-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold rounded text-sm transition-all duration-300">
+              COMPRAR
+            </button>
+          </div>
+          
+          <div className="bg-gradient-to-br from-pink-900/50 to-black border border-pink-500/30 rounded-xl p-4 hover:border-pink-500 transition-all duration-300 hover:scale-105">
+            <h4 className="text-lg font-bold text-pink-400 mb-2">RGB Extreme</h4>
+            <p className="text-sm text-gray-300 mb-3">Todos los RGB + Control</p>
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-sm line-through text-gray-500">$399</span>
+              <span className="text-xl font-bold text-pink-400">$249</span>
+            </div>
+            <button className="w-full py-2 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded text-sm transition-all duration-300">
+              COMPRAR
+            </button>
+          </div>
+          
+          <div className="bg-gradient-to-br from-cyan-900/50 to-black border border-cyan-500/30 rounded-xl p-4 hover:border-cyan-500 transition-all duration-300 hover:scale-105">
+            <h4 className="text-lg font-bold text-cyan-400 mb-2">VR Ready</h4>
+            <p className="text-sm text-gray-300 mb-3">PC VR + Headset Meta</p>
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-sm line-through text-gray-500">$2,499</span>
+              <span className="text-xl font-bold text-cyan-400">$1,899</span>
+            </div>
+            <button className="w-full py-2 bg-cyan-500 hover:bg-cyan-600 text-black font-bold rounded text-sm transition-all duration-300">
+              COMPRAR
+            </button>
           </div>
         </div>
       </div>
