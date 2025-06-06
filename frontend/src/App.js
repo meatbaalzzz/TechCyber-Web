@@ -442,7 +442,7 @@ const App = () => {
             <p className="text-center text-green-400 text-sm mt-2 font-bold">¡Ahorra $170!</p>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-900/50 to-black border border-blue-500/30 rounded-xl p-6 hover:border-blue-500 transition-all duration-300 hover:scale-105">
+          <div className="bg-gradient-to-br from-blue-900/50 to-black border border-blue-500/30 rounded-xl p-6 hover:border-blue-500 transition-all duration-300 hover:scale-105 relative overflow-hidden group">
             <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">
               COMPLETO 💎
             </div>
